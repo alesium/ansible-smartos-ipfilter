@@ -1,0 +1,21 @@
+---
+
+- name: copy ipf configuration
+  template: src="{{ smartos_ipfilter_ipf_config_file_src }}" dest="{{ smartos_ipfilter_ipf_config_file_dest }}" backup="yes" owner="root" group="root" mode="0644"
+  notify: restart ipfilter
+  tags:
+          - ipfilter
+          - update
+
+- name: copy ipnat configuration
+  template: src="{{ smartos_ipfilter_ipnat_config_file_src }}" dest="{{ smartos_ipfilter_ipnat_config_file_dest }}" backup="yes" owner="root" group="root" mode="0644"
+  notify: restart ipfilter
+  tags:
+          - ipfilter
+          - update
+
+- name: enable ipfilter
+  service: name="{{ smartos_ipfilter_service_name }}" state="started" enabled="yes"
+  tags: 
+        - ipfilter
+        - install
