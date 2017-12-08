@@ -1,0 +1,4 @@
+---
+
+- name: restart ipfilter
+  service: name="{{ smartos_ipfilter_service_name }}" state="restarted"

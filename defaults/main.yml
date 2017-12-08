@@ -1,0 +1,5 @@
+smartos_ipfilter_service_name: "network/ipfilter"
+smartos_ipfilter_ipf_config_file_src: "ipf.conf.j2"
+smartos_ipfilter_ipf_config_file_dest: "/etc/ipf/ipf.conf"
+smartos_ipfilter_ipnat_config_file_src: "ipnat.conf.j2"
+smartos_ipfilter_ipnat_config_file_dest: "/etc/ipf/ipnat.conf"
